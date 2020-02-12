@@ -85,7 +85,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+  title: 'The Call ',
+  date: 'April 52nd, 3789',
+  firstParagraph: `The most merciful thing in the world, I think, is the inability of the human mind to correlate all its contents. We live on a placid island of ignorance in the midst of black seas of infinity, and it was not meant that we should voyage far. The sciences, each straining in its own direction, have hitherto harmed us little; but some day the piecing together of dissociated knowledge will open up such terrifying vistas of reality, and of our frightful position therein, that we shall either go mad from the revelation or flee from the deadly light into the peace and safety of a new dark age.`,
+
+  secondParagraph: `the geometry of the place was all wrong. One could not be sure that the sea and the ground were horizontal`,
+
+  thirdParagraph: `The sciences, each straining in its own direction, have hitherto harmed us little; but some day the piecing together of dissociated knowledge will open up such terrifying vistas of reality, and of our frightful position therein, that we shall either go mad from the revelation or flee from the deadly light into the peace and safety of a new dark age.`
+}
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -134,10 +143,22 @@ function createArticle(obj){
   date.classList.add('date');
   btn.classList.add('expandButton');
 
-  title.textContent = 'obj.title';
-  date.textContent = 'obj.date';
-  p1.textContent = 'obj.firstParagraph';
-  p2.textContent = 'obj.secondParagraph';
-  p3.textContent = 'obj.thirdParagraph';
-  
+  title.textContent = obj.title;
+  date.textContent = obj.date;
+  p1.textContent = obj.firstParagraph;
+  p2.textContent = obj.secondParagraph;
+  p3.textContent = obj.thirdParagraph;
+  btn.textContent = 'Open for Content';
+
+  btn.addEventListener('click', () =>{
+    artBody.classList.toggle('article-open')
+  })
+
+  return artBody
 }
+
+const newsFeed = document.querySelector('.articles');
+
+data.map(data => {
+  newsFeed.append(createArticle(data))
+})
