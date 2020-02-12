@@ -159,6 +159,6 @@ function createArticle(obj){
 
 const newsFeed = document.querySelector('.articles');
 
-data.map(data => {
-  newsFeed.append(createArticle(data))
+data.map(items => {
+  newsFeed.append(createArticle(items))
 })

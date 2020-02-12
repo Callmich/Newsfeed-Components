@@ -34,6 +34,8 @@ let menuItems = [
   
 */
 
+const menuBtn = document.querySelector('.menu-button');
+
 function createMenu(obj) {
   const menu = document.createElement('div');
   const menuList = document.createElement('ul');
@@ -42,12 +44,11 @@ function createMenu(obj) {
 
   menu.classList.add('menu');
 
-  menuItems.forEach(obj =>{
-    menuObj.createElement('li');
-    menuList.append(menuObj);
+  obj.forEach(item =>{
+    let menuClickables = document.createElement('li');
+    menuClickables.textContent = item;
+    menuList.append(menuClickables);
   })
-
-const menuBtn = document.querySelector('.menu-button');
 
 menuBtn.addEventListener('click', ()=>{
   menu.classList.toggle('menu--open')
@@ -55,3 +56,5 @@ menuBtn.addEventListener('click', ()=>{
 
   return menu
 }
+
+menuBtn.append(createMenu(menuItems))
