@@ -6,7 +6,8 @@ let menuItems = [
   "What's New",
   'Tech Trends',
   'Music',
-  'Log Out'
+  'Log Out',
+  'Extreme Log Out'
 ];
 
 /* 
@@ -57,4 +58,6 @@ menuBtn.addEventListener('click', ()=>{
   return menu
 }
 
-menuBtn.append(createMenu(menuItems))
+const heads = document.querySelector('.header')
+
+heads.append(createMenu(menuItems))
