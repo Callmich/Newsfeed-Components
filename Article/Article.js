@@ -133,5 +133,11 @@ function createArticle(obj){
   artBody.classList.add('article');
   date.classList.add('date');
   btn.classList.add('expandButton');
+
+  title.textContent = 'obj.title';
+  date.textContent = 'obj.date';
+  p1.textContent = 'obj.firstParagraph';
+  p2.textContent = 'obj.secondParagraph';
+  p3.textContent = 'obj.thirdParagraph';
   
 }
